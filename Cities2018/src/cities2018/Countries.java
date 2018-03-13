@@ -25,15 +25,30 @@ public class Countries {
     }
 
     public Collection<String> sortedCapitals(){
-        TreeSet set = new TreeSet();
-        set.addAll(capitals());
+        TreeSet set = new TreeSet(capitals());
         return set;
     }
     
     public Collection<String> sortedCountries(){
-        TreeSet set = new TreeSet();
-        set.addAll(countries());
+        TreeSet set = new TreeSet(countries());
         return set;
+    }
+    
+    public Map<String,String> sortedByCountries(){
+        TreeMap map = new TreeMap(countries);
+        return map;
+    }
+    
+    public Map<String,String> sortedByCapitals(){
+        Map<String,String> map = new TreeMap();
+        
+        for(String key : countries.keySet())
+        {
+            String value = countries.get(key);
+            map.put(value, key);
+        }
+        
+        return map;
     }
     
     
@@ -50,6 +65,8 @@ public class Countries {
         System.out.println("Sorted:");
         System.out.println(c.sortedCapitals());
         System.out.println(c.sortedCountries());
+        System.out.println(c.sortedByCountries());
+        System.out.println(c.sortedByCapitals());
     }
     
 }
