@@ -2,10 +2,9 @@
 package cities2018;
 
 import java.util.*;
-/**
- *
- * @author Student
- */
+
+
+
 public class Countries {
     
     private Map<String,String> countries = new HashMap();
