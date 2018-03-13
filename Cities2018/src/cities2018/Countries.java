@@ -17,13 +17,26 @@ public class Countries {
     }
     
     public Collection<String> capitals(){
-        
+        return countries.values();
     }
     
     public Collection<String> countries(){
-        
+        return countries.keySet();
     }
 
+    public Collection<String> sortedCapitals(){
+        TreeSet set = new TreeSet();
+        set.addAll(capitals());
+        return set;
+    }
+    
+    public Collection<String> sortedCountries(){
+        TreeSet set = new TreeSet();
+        set.addAll(countries());
+        return set;
+    }
+    
+    
     @Override
     public String toString() {
         return "Countries{" + "countries=" + countries + '}';
@@ -32,6 +45,11 @@ public class Countries {
     public static void main(String[] args) {
         Countries c = new Countries();
         System.out.println(c);
+        System.out.println(c.capitals());
+        System.out.println(c.countries());
+        System.out.println("Sorted:");
+        System.out.println(c.sortedCapitals());
+        System.out.println(c.sortedCountries());
     }
     
 }
