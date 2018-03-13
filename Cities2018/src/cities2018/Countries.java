@@ -16,6 +16,14 @@ public class Countries {
         countries.put("Russia", "Moscow");
         countries.put("Spain", "Madrid");
     }
+    
+    public Collection<String> capitals(){
+        
+    }
+    
+    public Collection<String> countries(){
+        
+    }
 
     @Override
     public String toString() {
