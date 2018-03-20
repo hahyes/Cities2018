@@ -29,12 +29,24 @@ public class Cities {
     
     public Map<String, String> provinceWithOneCity()
     {
-        
+        Map<String,String> map = new HashMap();
+        for(String key : provinces.keySet())
+        {
+            List<String> list = provinces.get(key);
+            String city = list.get(0);
+            map.put(key, city);
+        }
+        return map;
     }
     
     public Collection<String> cities()
     {
-        
+        Collection<String> col = new ArrayList();
+        for(List<String> list : provinces.values())
+        {
+            col.addAll(list);
+        }
+        return col;
     }
     
     public static void main(String[] args){
